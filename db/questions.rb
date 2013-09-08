@@ -11,4 +11,4 @@ TownHealthRecord.order("per_capita_income_00").limit(5).offset(2)
 TownHealthRecord.order("teen_birth_perc DESC").where.not("location = ? OR location = ? OR location = ?",'Boston','Becket','Beverly').limit(1)
 
 #Omitting Boston, what town has the highest number of infant mortalities?
-TownHealthRecord.order("infant_mortality_perc_05_to_08 DESC").where.not("location = ?",'Boston').limit(1)
+TownHealthRecord.order("infant_mortality_perc_05_to_08 DESC").where.not("location = ? OR location = ?",'Boston','Massachusetts Total').limit(1)
